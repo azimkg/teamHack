@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+.navbar-item {
+  margin: 5px 15px;
+  color: rgb(78, 77, 77);
+  text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.navbar-item-active {
+  margin: 5px 15px;
+  color: rgb(5, 4, 4);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 2px solid black;
+}
+a:hover {
+  color: rgb(119, 73, 73);
+  cursor: pointer;
+  font-weight: bold;
+}
