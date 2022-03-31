@@ -1,12 +1,15 @@
 import React from "react";
-import Footer from "./components/Footer/Footer";
+import 'antd/dist/antd.css';
+import Routing from "./Routing";
 
 
 const App = () => {
   return <div>
-    <Footer />
-
+    <Routing />
   </div>;
+
+
+
 };
 
 export default App;
