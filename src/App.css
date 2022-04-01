@@ -1,0 +1,15 @@
+.containers {
+  width: 80vw;
+  margin: 20px auto;
+}
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+}
+.products-search {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

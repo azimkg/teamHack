@@ -1,3 +1,8 @@
+.footers {
+  width: 100%;
+  max-width: 100%;
+  height: 300px;
+}
 .contarner-footer {
   display: flex;
   margin: 20px 20px 20px 20px;
@@ -8,8 +13,8 @@
   font-weight: 5px;
 }
 .icon-sait {
-  width: 50px;
-  height: 50px;
+  width: 200px;
+  /* height: 50px; */
   border-radius: 100px;
 }
 .footer-span {
@@ -18,5 +23,6 @@
 }
 .footer-icon {
   display: flex;
-  justify-content: space-evenly;
+  width: 100%;
+  justify-content: space-around;
 }

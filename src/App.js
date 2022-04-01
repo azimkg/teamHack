@@ -1,15 +1,15 @@
 import React from "react";
-import 'antd/dist/antd.css';
+import ContextPhoneProvider from "./context/phoneContext";
 import Routing from "./Routing";
-
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
+import "./App.css";
 
 const App = () => {
-  return <div>
-    <Routing />
-  </div>;
-
-
-
+  return (
+    <ContextPhoneProvider>
+      <Routing />
+    </ContextPhoneProvider>
+  );
 };
 
 export default App;
