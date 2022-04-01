@@ -1,0 +1,28 @@
+.footers {
+  width: 100%;
+  max-width: 100%;
+  height: 300px;
+}
+.contarner-footer {
+  display: flex;
+  margin: 20px 20px 20px 20px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.contarner-footer p {
+  font-weight: 5px;
+}
+.icon-sait {
+  width: 200px;
+  /* height: 50px; */
+  border-radius: 100px;
+}
+.footer-span {
+  font-weight: bold;
+  font-size: 15px;
+}
+.footer-icon {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}

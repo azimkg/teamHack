@@ -11,7 +11,7 @@ const PhoneList = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="containers">
       <List
         itemLayout="horizontal"
         dataSource={phones}

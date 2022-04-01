@@ -8,11 +8,16 @@ export const phoneContext = React.createContext();
 const INIT_STATE = {
   phones: [],
   editPhone: null,
+  countPhone: 0,
 };
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case CASE_GET_PHONE:
-      return { ...state, phones: action.payload.data };
+      return {
+        ...state,
+        phones: action.payload.data,
+        countPhone: action.payload.headers["x-total-count"],
+      };
     case CASE_EDIT_PHONE:
       return { ...state, editPhone: action.payload.data };
     default:
@@ -24,7 +29,7 @@ const ContextPhoneProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   async function getAllPhones() {
-    let result = await axios(PHONE_API);
+    let result = await axios(PHONE_API + window.location.search);
     dispatch({
       type: CASE_GET_PHONE,
       payload: result,
@@ -56,6 +61,7 @@ const ContextPhoneProvider = ({ children }) => {
   return (
     <phoneContext.Provider
       value={{
+        countPhone: state.countPhone,
         editPhone: state.editPhone,
         phones: state.phones,
         getAllPhones,

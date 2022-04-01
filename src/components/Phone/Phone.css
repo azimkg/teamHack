@@ -1,0 +1,22 @@
+.classes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+.card-phone {
+  display: inline-block;
+  overflow: hidden;
+}
+.card-phone img {
+  transition: 1s;
+  display: block;
+}
+.card-phone img:hover {
+  transform: scale(1.1);
+}
+
+.inp-search {
+  margin-top: 20px;
+  text-align: center;
+}
