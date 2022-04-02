@@ -9,13 +9,11 @@ import {
 const Footer = () => {
   return (
     <div className="footers">
-      <div
-        style={{ marginTop: "20px", height: "1px", backgroundColor: "gray" }}
-      ></div>
+      <div style={{ height: "1px", backgroundColor: "gray" }}></div>
       <div className="contarner-footer">
         <div>
           <span className="footer-span">Товары </span>
-          <p>
+          <p style={{ fontSize: "17px", fontWeight: "500" }}>
             Смартфоны
             <br />
             Планшеты
@@ -29,7 +27,7 @@ const Footer = () => {
         </div>
         <div>
           <span className="footer-span">Поддержка </span>
-          <p>
+          <p style={{ fontSize: "17px", fontWeight: "500" }}>
             Акции
             <br />
             Контакты
@@ -48,7 +46,7 @@ const Footer = () => {
         </div>
         <div>
           <span className="footer-span">Интересное </span>
-          <p>
+          <p style={{ fontSize: "17px", fontWeight: "500" }}>
             Galaxy S22 Ultra
             <br />
             Серия Galaxy Note

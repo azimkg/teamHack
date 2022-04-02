@@ -16,7 +16,14 @@
   transform: scale(1.1);
 }
 
-.inp-search {
-  margin-top: 20px;
+.list-inp {
   text-align: center;
+  margin-top: 10px;
+}
+.list-filter {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 60%;
 }
