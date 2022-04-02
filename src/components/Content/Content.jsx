@@ -120,7 +120,7 @@ const Content = () => {
           </div>
         </div>
         <img
-          style={{ width: "100%" }}
+          style={{ width: "100%", maxWidth: "1300px", marginBottom: "20px" }}
           src="https://www.samsungstore.kg/files/media/6/6272.jpg"
         />
         <div
@@ -148,8 +148,10 @@ const Content = () => {
       <div
         style={{
           backgroundColor: "black",
-          height: "30%",
-          margin: "40px 0px 20px",
+          height: "100%",
+          maxHeight: "50%",
+
+          margin: "40px 0px 0px",
           display: "flex",
           justifyContent: "space-around",
         }}

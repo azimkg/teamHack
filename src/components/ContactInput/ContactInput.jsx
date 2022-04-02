@@ -19,7 +19,7 @@ const ContactInput = () => {
       return;
     } else {
       setTimeout(() => {
-        message.warning("Товар успешно добавлен!");
+        message.success("Товар успешно добавлен!");
       }, 1000);
     }
     let newPhone = {

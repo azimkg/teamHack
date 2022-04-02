@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./Navbar.css";
 import { Link, useLocation } from "react-router-dom";
 
@@ -19,11 +18,6 @@ const Navbar = () => {
       title: "Для дома",
       link: "/for",
       id: 3,
-    },
-    {
-      title: "Сервисный центр",
-      link: "/services",
-      id: 4,
     },
   ];
 
