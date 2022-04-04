@@ -1,15 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { phoneContext } from "../../context/phoneContext";
-import { Card, Input, Pagination } from "antd";
+import { Card, Empty, Input, Pagination } from "antd";
 import "./Phone.css";
-import {
-  EllipsisOutlined,
-  SettingOutlined,
-  ShoppingCartOutlined,
-} from "@ant-design/icons";
-import { Link, useSearchParams } from "react-router-dom";
 
-const { Meta } = Card;
+import { useSearchParams } from "react-router-dom";
+import PhoneCard from "./PhoneCard";
+import Filter from "../Filter/Filter";
+import { FileSearchOutlined } from "@ant-design/icons";
 
 const Phone = () => {
   const { phones, getAllPhones, countPhone } = useContext(phoneContext);
@@ -21,61 +18,73 @@ const Phone = () => {
     searchParams.get("_page") ? searchParams.get("_page") : 1
   );
   const [limit, setLimit] = useState(4);
+  const [brand, setBrand] = useState([]);
+  const [price, setPrice] = useState([1, 5000]);
+  const [show, setShow] = useState(false);
   useEffect(() => {
     getAllPhones();
   }, []);
   useEffect(() => {
     setSearchParams({
       q: search,
+      brand: brand,
+      price_gte: price[0],
+      price_lte: price[1],
       _page: page,
       _limit: limit,
     });
-  }, [search, page, limit]);
+  }, [search, page, limit, brand, price]);
   useEffect(() => {
     getAllPhones();
   }, [searchParams]);
 
   return (
     <div className="list-phones">
-      <div className="inp-search">
+      <div className="list-inp">
         <Input.Search
           placeholder="Search..."
-          style={{ width: "400px", height: "40px" }}
+          className="sea"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className="classes">
-        {phones.map((item) => (
-          <Card
-            className="card-phone"
-            style={{
-              width: 300,
-              margin: "0px 20px",
-              boxShadow: "0px 0px 4px",
-            }}
-            cover={
-              <img alt="example" style={{ height: "300px" }} src={item.image} />
-            }
-            actions={[
-              <SettingOutlined key="setting" />,
-              <ShoppingCartOutlined
-                key="shopping"
-                style={{ fontSize: "22px" }}
-              />,
-              <Link key="ellipsis" to={`/details/${item.id}`}>
-                <EllipsisOutlined
-                  style={{ color: "black", fontSize: "22px" }}
-                />
-              </Link>,
-            ]}
-          >
-            <Meta title={item.name} description={<h2>{"$" + item.price}</h2>} />
-          </Card>
-        ))}
+      <div
+        style={{
+          textAlign: "center",
+          margin: "10px auto",
+          cursor: "pointer",
+          width: "100%",
+          maxWidth: "200px",
+        }}
+        onClick={() => setShow(!show)}
+      >
+        {show ? (
+          <FileSearchOutlined style={{ fontSize: "30px", color: "blue" }} />
+        ) : (
+          <FileSearchOutlined
+            style={{ fontSize: "30px", textAlign: "center", color: "blue" }}
+          />
+        )}
+      </div>
+      {show ? (
+        <div className="list-filter">
+          <Filter
+            brand={brand}
+            setBrand={setBrand}
+            price={price}
+            setPrice={setPrice}
+          />
+        </div>
+      ) : null}
+      <div className="products-list">
+        {phones.length > 0 ? (
+          phones.map((item) => <PhoneCard key={item.id} item={item} />)
+        ) : (
+          <Empty />
+        )}
       </div>
       <Pagination
-        style={{ marginTop: "50px", textAlign: "center" }}
+        style={{ margin: "50px 0px", textAlign: "center" }}
         total={+countPhone}
         current={+page}
         pageSize={+limit}

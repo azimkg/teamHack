@@ -19,7 +19,7 @@ const ContactInput = () => {
       return;
     } else {
       setTimeout(() => {
-        message.warning("Товар успешно добавлен!");
+        message.success("Товар успешно добавлен!");
       }, 1000);
     }
     let newPhone = {
@@ -38,7 +38,7 @@ const ContactInput = () => {
   return (
     <div className="contacts-inp">
       <div className="addInp">
-        <h1 className="title-inp">Добавить новый смарфон</h1>
+        <h1 className="title-inp">Добавить новый смартфон</h1>
         <input
           className="inputAdd"
           type="text"

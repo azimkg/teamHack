@@ -1,10 +1,12 @@
 .navbar {
   display: flex;
   justify-content: center;
+  color: rgb(119, 73, 73);
+  cursor: pointer;
 }
 .navbar-item {
   margin: 5px 15px;
-  color: rgb(78, 77, 77);
+  color: rgb(132, 128, 128);
   text-decoration: none;
   font-family: "Helvetica Neue", Helvetica, Arial;
   font-size: 14px;
@@ -18,10 +20,15 @@
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
-  border-bottom: 2px solid black;
+  /* border-bottom: 1px solid black; */
 }
-a:hover {
-  color: rgb(119, 73, 73);
-  cursor: pointer;
-  font-weight: bold;
+.navbar-item-active,
+.navbar-item:hover {
+  color: rgb(56, 54, 54);
+}
+
+@media (max-width: 1150px) {
+  .navbar {
+    display: none;
+  }
 }

@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, message } from "antd";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { phoneContext } from "../../context/phoneContext";
@@ -30,6 +30,9 @@ const EditPhone = () => {
   function save() {
     editOnePhone(params.id, edit);
     navigate("/admin");
+    setTimeout(() => {
+      message.success("Изменения успешно сохранены!");
+    }, 1000);
   }
 
   return edit ? (
@@ -70,12 +73,9 @@ const EditPhone = () => {
           onChange={handleValue}
           name="price"
         />
-        <Button
-          style={{ width: "350px", height: "40px", margin: "20px" }}
-          onClick={save}
-        >
+        <button className="edit-btn" onClick={save}>
           Сохранить
-        </Button>
+        </button>
       </div>
     </div>
   ) : (

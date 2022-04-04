@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-
 import "./Navbar.css";
 import { Link, useLocation } from "react-router-dom";
 import { authContext } from "../../context/authContext";
@@ -21,11 +20,6 @@ const Navbar = () => {
       title: "Для дома",
       link: "/for",
       id: 3,
-    },
-    {
-      title: "Сервисный центр",
-      link: "/services",
-      id: 4,
     },
   ];
 

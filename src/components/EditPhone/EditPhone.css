@@ -24,3 +24,31 @@
   padding: 0px 10px;
   box-shadow: 1px 3px rgb(93, 92, 92), -0.5em 0 0.9em;
 }
+.edit-btn {
+  margin-top: 10px;
+  width: 350px;
+  height: 40px;
+}
+.edit-btn:hover {
+  background-color: grey;
+  color: white;
+}
+@media (max-width: 700px) {
+  .edits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+}
+@media (max-width: 400px) {
+  .edit-inp {
+    width: 250px;
+    height: 30px;
+  }
+  .edit-btn {
+    width: 250px;
+    height: 30px;
+  }
+}
