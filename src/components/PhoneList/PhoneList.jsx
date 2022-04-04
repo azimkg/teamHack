@@ -18,7 +18,7 @@ const PhoneList = () => {
         renderItem={(item) => (
           <List.Item
             extra={
-              <img src={item.image} alt="img" width="272px" height="272px" />
+              <img src={item.image} alt="img" className="img-responsive" />
             }
           >
             <List.Item.Meta
@@ -38,23 +38,28 @@ const PhoneList = () => {
               }
               description={
                 <>
-                  <div style={{ margin: "0px 10px 0px 0px " }}>{item.desc}</div>
-                  <div
-                    style={{
-                      display: "flex",
-                    }}
-                  >
-                    <Button
-                      onClick={() => deleteOnePhone(item.id)}
-                      style={{ margin: "10px 10px 10px 0px" }}
+                  <div className="phone-ist">
+                    <div style={{ margin: "0px 10px 0px 0px " }}>
+                      {item.desc}
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        margin: "10px auto",
+                      }}
                     >
-                      Удалить
-                    </Button>
-                    <Link to={`/edit/${item.id}`}>
-                      <Button style={{ margin: "10px 10px 10px 0px" }}>
-                        Изменить
+                      <Button
+                        onClick={() => deleteOnePhone(item.id)}
+                        style={{ margin: "10px 10px 10px 0px" }}
+                      >
+                        Удалить
                       </Button>
-                    </Link>
+                      <Link to={`/edit/${item.id}`}>
+                        <Button style={{ margin: "10px 10px 10px 0px" }}>
+                          Изменить
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                 </>
               }

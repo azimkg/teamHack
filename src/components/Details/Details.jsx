@@ -10,10 +10,11 @@ const Details = () => {
   useEffect(() => {
     editsPhone(params.id);
   }, []);
+
   return editPhone ? (
     <div className="detka containers">
       <div>
-        <Image width={700} src={editPhone.image} />
+        <Image className="imag" src={editPhone.image} />
       </div>
       <div className="details">
         <h1 className="details-min">{editPhone.name}</h1>

@@ -25,3 +25,44 @@
 .details-min:last-child {
   border: none;
 }
+.imag {
+  width: 700px;
+  margin: 100px 20px 100px 0px;
+}
+
+@media (max-width: 1200px) {
+  .detka {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .imag {
+    width: 600px;
+    margin: 0;
+  }
+}
+@media (max-width: 700px) {
+  .imag {
+    width: 600px;
+    margin: 0px;
+  }
+  .details-min {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  .example {
+    margin: 10px 0;
+  }
+}
+@media (max-width: 480px) {
+  .imag {
+    width: 400px;
+  }
+  .details-min {
+    font-size: 12px;
+    margin-top: 0px;
+  }
+  .example {
+    margin: 0;
+    padding-bottom: 0;
+  }
+}

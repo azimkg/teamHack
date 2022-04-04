@@ -4,100 +4,86 @@ import "./InHome.css";
 const InHome = () => {
   return (
     <div className="containers">
-      <div className="in-container ">
-        <div className="home-card-1">
-          <img
-            style={{ maxWidth: "100%" }}
-            src="https://www.samsungstore.kg/files/media/0/48.jpg"
-          />
-          <div>
-            <h1 className="bollsh" style={{ color: "white" }}>
-              Холодильники
-            </h1>
-            <h3 className="bolld-min" style={{ color: "white" }}>
-              Непревзойденная свежесть
-            </h3>
-            <div className="bold-none">
-              <p style={{ color: "white" }}>
-                В вашем холодильнике всегда свежий и влажный воздух
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="home-card-2">
-          <h1 className="bollsh">Стиральные машины</h1>
-          <h3 className="bolld-min">Инновации в стирке</h3>
-          <div className="bold-none">
-            <p className="p">
-              Наши стиральные машины наделены множеством инновационных функций и
-              используют уникальную технологию стирки, которая позволит
-              сэкономить ваши силы и время
-            </p>
-          </div>
-          <img
-            style={{ maxWidth: "100%" }}
-            src="https://www.samsungstore.kg/files/media/0/238.png"
-          />
-        </div>
-        <div className="home-card-all">
-          <div className="home-card-text">
-            <h1 className="bollsh">Пылесосы</h1>
-            <h3 className="bolld-min">Легкая уборка. Мощный результат</h3>
-            <div className="bold-none">
-              <p className="p">
-                Турбина Anti-Tangle не дает пыли и мусору забивать фильтр и
-                препятствовать прохождению воздуха. Турбина Anti-Tangle
-                предотвращает наматывание волос и шерсти на детали пылесоса{" "}
-              </p>
-            </div>
-          </div>
-          <img
-            className="img-home"
-            src="https://www.samsungstore.kg/files/media/0/887.jpg"
-          />
-        </div>
-        <div className="home-card-all">
-          <img
-            className="img-home"
-            src="https://www.samsungstore.kg/files/media/0/245.png"
-          />
-          <div className="home-card-text">
-            <h1 className="bollsh">Микроволновые печи</h1>
-            <h3 className="bolld-min">
-              Новые возможности для великолепного вкуса
-            </h3>
-            <div className="bold-none">
-              <p className="p">
-                Микроволновые печи Samsung с инновационными функциями и стильным
-                дизайном приятно удивят вас своими возможностями и с легкостью
-                справятся с любым кулинарным запросом.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="home-card-all">
-          <div className="home-card-text">
-            <h1 className="bollsh"> Кондиционеры</h1>
-            <h3 className="bolld-min">Оптимальное решение</h3>
-            <div className="bold-none">
-              <p className="p">
-                Кондиционер Samsung был разработан специально для достижения
-                отменной эффективности. Его уникальный дизайн, современные
-                технологии и функциональность обеспечат высочайшее качество
-                воздуха.
-              </p>
-            </div>
-          </div>
-          <img
-            className="img-home"
-            src="https://www.samsungstore.kg/files/media/0/747.png"
-          />
+      <div className="in-home">
+        <img
+          className="cold"
+          src="https://www.samsungstore.kg/files/media/0/48.jpg"
+          alt="image"
+        />
+        <div className="home">
+          <h1 className="aaas"> Холодильники</h1>
+          <h4 className="aaas">
+            Непревзойденная свежесть В вашем холодильнике всегда свежий и
+            влажный воздух
+          </h4>
         </div>
       </div>
+      <div className="stiralka">
+        <h1>Стиральные машины</h1>
+        <h3>Инновации в стирке</h3>
+        <h4>
+          Наши стиральные машины наделены множеством инновационных функций и
+          используют уникальную технологию стирки, которая позволит сэкономить
+          ваши силы и время
+        </h4>
+        <img
+          className="stirka-img"
+          src="https://www.samsungstore.kg/files/media/0/238.png"
+          alt="image"
+        />
+      </div>
+      <div className="pylesos">
+        <div className="pylesos-title">
+          <h1>Пылесосы </h1>
+          <h3>Легкая уборка. Мощный результат </h3>
+          <h4>
+            Турбина Anti-Tangle не дает пыли и мусору забивать фильтр и
+            препятствовать прохождению воздуха. Турбина Anti-Tangle
+            предотвращает наматывание волос и шерсти на детали пылесоса
+          </h4>
+        </div>
+        <img
+          className="vse-oni"
+          src="https://www.samsungstore.kg/files/media/0/887.jpg"
+          alt="image"
+        />
+      </div>
+      <div className="pylesos">
+        <div className="pylesos-title">
+          <h1>Микроволновые печи </h1>
+          <h3> Новые возможности для великолепного вкуса </h3>
+          <h4>
+            Микроволновые печи Samsung с инновационными функциями и стильным
+            дизайном приятно удивят вас своими возможностями и с легкостью
+            справятся с любым кулинарным запросом.
+          </h4>
+        </div>
+        <img
+          className="vse-oni"
+          src="https://www.samsungstore.kg/files/media/0/245.png"
+          alt="image"
+        />
+      </div>
+      <div className="pylesos">
+        <div className="pylesos-title">
+          <h1>Кондиционеры </h1>
+          <h3>Оптимальное решение</h3>
+          <h4>
+            Кондиционер Samsung был разработан специально для достижения
+            отменной эффективности. Его уникальный дизайн, современные
+            технологии и функциональность обеспечат высочайшее качество воздуха.
+          </h4>
+        </div>
+        <img
+          className="vse-oni"
+          src="https://www.samsungstore.kg/files/media/0/747.png"
+          alt="image"
+        />
+      </div>
       <img
-        style={{ maxWidth: "100%" }}
+        style={{ width: "100%", maxWidth: "100%" }}
         src="https://www.samsungstore.kg/files/media/6/6371.png"
+        alt="image"
       />
     </div>
   );

@@ -12,8 +12,11 @@ import FollowCart from "./components/FollowCart/FollowCart";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import InHome from "./components/InHome/InHome";
+import Error404 from "./components/Pages/Error404";
+import Success from "./components/Pages/Success";
 import Phone from "./components/Phone/Phone";
 import PhoneList from "./components/PhoneList/PhoneList";
+import Tv from "./components/Tv/Tv";
 
 const Routing = () => {
   return (
@@ -32,6 +35,9 @@ const Routing = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<CartPhone />} />
         <Route path="/buy" element={<Buy />} />
+        <Route path="/tv" element={<Tv />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />
     </BrowserRouter>

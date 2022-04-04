@@ -1,10 +1,9 @@
 import { Form, Input } from "antd";
 import React, { useState } from "react";
 import { Checkbox } from "antd";
-import { Modal, Button } from "antd";
 
 import "./Buy.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CheckOutlined } from "@ant-design/icons";
 
 const Buy = () => {
@@ -61,17 +60,11 @@ const Buy = () => {
         <div className="form-group">
           <Checkbox onChange={onChange}>Запомнить мою карту</Checkbox>
         </div>
-        <button className="form-btn" onClick={showModal}>
-          Оплатить
-        </button>
-        <Modal visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-          <div className="modal">
-            <span>
-              <CheckOutlined />
-            </span>
-            <span>Покупка прошла успешно!</span>
-          </div>
-        </Modal>
+        <Link to="/success">
+          <button className="form-btn" onClick={showModal}>
+            Оплатить
+          </button>
+        </Link>
       </div>
     </div>
   );

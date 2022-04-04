@@ -8,11 +8,6 @@ const Contacts = () => {
       link: "/contact",
       id: 1,
     },
-    {
-      title: "Гарантии",
-      link: "/garant",
-      id: 2,
-    },
   ];
   const location = useLocation();
   return (

@@ -43,7 +43,7 @@ const Phone = () => {
       <div className="list-inp">
         <Input.Search
           placeholder="Search..."
-          style={{ width: "400px", height: "40px" }}
+          className="sea"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

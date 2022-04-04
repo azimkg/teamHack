@@ -27,3 +27,23 @@
   width: 100%;
   max-width: 60%;
 }
+.sea {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 40%;
+  height: 40px;
+}
+@media (max-width: 950px) {
+  .sea {
+    max-width: 80%;
+  }
+}
+@media (max-width: 350px) {
+  .sea {
+    max-width: 80%;
+  }
+  .card-phone {
+    width: 100%;
+    max-width: 250px;
+  }
+}
