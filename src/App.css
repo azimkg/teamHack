@@ -41,6 +41,9 @@
   width: 272px;
   height: 272px;
 }
+.emails {
+  display: none;
+}
 @media (max-width: 1150px) {
   .menu {
     display: block;
@@ -51,6 +54,9 @@
   .img-responsive {
     width: 260px;
     height: 250px;
+  }
+  .emails {
+    display: block;
   }
 }
 @media (max-width: 350px) {

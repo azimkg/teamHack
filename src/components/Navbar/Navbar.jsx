@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navbar.css";
 import { Link, useLocation } from "react-router-dom";
+import { authContext } from "../../context/authContext";
+import { ADMIN_EMAIL } from "../helpers/consts";
 
 const Navbar = () => {
   const NAV_BAR = [
@@ -22,6 +24,7 @@ const Navbar = () => {
   ];
 
   const location = useLocation();
+  const { currentUser } = useContext(authContext)
   return (
     <div className="navbar">
       {NAV_BAR.map((item) => (
@@ -37,14 +40,14 @@ const Navbar = () => {
           {item.title}
         </Link>
       ))}
-      <Link
+      {currentUser === ADMIN_EMAIL ? <Link
         to="/admin"
         className={
           location.pathname === "/admin" ? "navbar-item-active" : "navbar-item"
         }
       >
         Админ
-      </Link>
+      </Link> : null}
     </div>
   );
 };

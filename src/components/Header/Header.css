@@ -25,6 +25,19 @@
 .shopping {
   font-size: 25px;
 }
+.email {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.alsu {
+  width: 100%;
+  max-width: 200px;
+}
+.azim {
+  width: 100%;
+  max-width: 200px;
+}
 
 @media (max-width: 1200px) {
   .headers {
@@ -42,6 +55,12 @@
   }
 }
 @media (max-width: 700px) {
+  .email {
+    display: none;
+  }
+  .out {
+    display: none;
+  }
   .logotype {
     display: none;
   }
@@ -61,6 +80,14 @@
   }
 }
 @media (max-width: 550px) {
+  .alsu,
+  .azim {
+    max-width: 100%;
+  }
+  .email {
+    display: flex;
+    flex-direction: column-reverse;
+  }
   .headers {
     width: 100%;
     display: flex;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "antd";
-import { TVS } from "../helpers/tvs";
+import { TVS } from ".././../helpers/tvs"
 import "./Tv.css";
 
 const { Meta } = Card;
