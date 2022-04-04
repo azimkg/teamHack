@@ -26,3 +26,9 @@
 .navbar-item:hover {
   color: rgb(56, 54, 54);
 }
+
+@media (max-width: 1150px) {
+  .navbar {
+    display: none;
+  }
+}

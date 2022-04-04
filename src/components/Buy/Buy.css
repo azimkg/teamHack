@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 45vw;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 100px 20px;
 }
 .buy-card {
   width: 300px;
@@ -70,4 +71,33 @@
   justify-content: space-around;
   width: 100%;
   max-width: 300px;
+}
+@media (max-width: 500px) {
+  .buy-block {
+    max-width: 350px;
+    height: 450px;
+    margin: 80px 20px;
+  }
+  .buy-card {
+    width: 250px;
+  }
+  .buy-input {
+    margin-top: 20px;
+    width: 250px;
+  }
+  .form-cod {
+    width: 250px;
+  }
+  .form-data {
+    width: 70%;
+  }
+  .form-kod {
+    width: 40%;
+  }
+  .form-group {
+    width: 250px;
+  }
+  .form-btn {
+    width: 250px;
+  }
 }

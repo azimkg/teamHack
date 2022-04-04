@@ -73,12 +73,9 @@ const EditPhone = () => {
           onChange={handleValue}
           name="price"
         />
-        <Button
-          style={{ width: "350px", height: "40px", margin: "20px" }}
-          onClick={save}
-        >
+        <button className="edit-btn" onClick={save}>
           Сохранить
-        </Button>
+        </button>
       </div>
     </div>
   ) : (

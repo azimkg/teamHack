@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <div className="containers">
       <div style={{ margin: "20px 20px 20px" }}>
-        <h1 style={{ fontSize: "42px", fontWeight: "bold", color: "black" }}>
+        <h1 style={{ fontSize: "30px", fontWeight: "bold", color: "black" }}>
           Контакты
         </h1>
         <div className="adres-contact">

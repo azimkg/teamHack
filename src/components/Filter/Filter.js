@@ -5,7 +5,7 @@ import { phoneContext } from "../../context/phoneContext";
 const Filter = ({ brand, setBrand, price, setPrice }) => {
   const { phones } = useContext(phoneContext);
   return (
-    <div style={{ width: "100%", maxWidth: "44%" }}>
+    <div className="filters">
       <Select
         value={brand}
         onChange={(e) => setBrand(e)}
@@ -15,7 +15,9 @@ const Filter = ({ brand, setBrand, price, setPrice }) => {
         mode="multiple"
       >
         {phones.map((item) => (
-          <Select.Option key={item.id}>{item.name}</Select.Option>
+          <Select.Option key={item.id} value={item.name}>
+            {item.name}
+          </Select.Option>
         ))}
       </Select>
       <Slider
