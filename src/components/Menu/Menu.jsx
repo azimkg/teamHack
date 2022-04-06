@@ -10,8 +10,8 @@ const rootSubmenuKeys = ["sub1", "sub2"];
 
 const Menus = () => {
   const [openKeys, setOpenKeys] = useState(["sub2"]);
-  const { currentUser, handleLogout } = useContext(authContext)
-  const navigate = useNavigate()
+  const { currentUser, handleLogout } = useContext(authContext);
+  const navigate = useNavigate();
 
   const onOpenChange = (keys) => {
     const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
@@ -33,8 +33,14 @@ const Menus = () => {
         key="sub1"
         icon={<MenuUnfoldOutlined style={{ color: "black" }} />}
       >
-        <Menu.Item  >
-          {currentUser ? <div className="emails"> <p onClick={handleLogout}>Выйти</p></div> : <p onClick={() => navigate("/auth")}>Войти</p>}
+        <Menu.Item>
+          {currentUser ? (
+            <div className="emails">
+              <p onClick={handleLogout}>Выйти</p>
+            </div>
+          ) : (
+            <p onClick={() => navigate("/auth")}>Войти</p>
+          )}
         </Menu.Item>
         <Link to="/phone">
           <Menu.Item style={{ color: "black" }} key="1">
@@ -54,6 +60,11 @@ const Menus = () => {
         <Link to="/admin">
           <Menu.Item style={{ color: "black" }} key="4">
             Админ
+          </Menu.Item>
+        </Link>
+        <Link to="/commit">
+          <Menu.Item style={{ color: "black" }} key="4">
+            Отзывы
           </Menu.Item>
         </Link>
         <Link to="/contact">

@@ -1,43 +1,45 @@
 import React, { useReducer } from "react";
-import { CASE_GET_FOLLOW } from "../components/helpers/Cases";
+import { CASE_GET_FAN } from "../components/helpers/Cases";
 
-export const followContext = React.createContext();
+export const fanContext = React.createContext();
 
 const INIT_STATE = {
-  follow: {},
-  followLength: 0,
+  fan: {},
+  cartFan: 0,
 };
+
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
-    case CASE_GET_FOLLOW:
+    case CASE_GET_FAN:
       return {
         ...state,
-        follow: action.payload,
-        followLength: action.payload.products.length,
+        fan: action.payload,
+        cartFan: action.payload.fans.length,
       };
     default:
       return state;
   }
 };
-
-const FollowContextProvider = ({ children }) => {
+const FanContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
-  function getFollow() {
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    if (!cart) {
-      cart = { products: [] };
-      localStorage.setItem("cart", JSON.stringify(cart));
+
+  function getCart1() {
+    let box = JSON.parse(localStorage.getItem("box"));
+    if (!box) {
+      box = { fans: [] };
+      localStorage.setItem("box", JSON.stringify(box));
     }
+
     dispatch({
-      type: CASE_GET_FOLLOW,
-      payload: cart,
+      type: CASE_GET_FAN,
+      payload: box,
     });
   }
 
-  function addProductToFollow(product) {
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    if (!cart) {
-      cart = { products: [] };
+  function addFans(product) {
+    let box = JSON.parse(localStorage.getItem("box"));
+    if (!box) {
+      box = { fans: [] };
     }
 
     let newProduct = {
@@ -45,51 +47,49 @@ const FollowContextProvider = ({ children }) => {
       count: 1,
       subPrice: product.price,
     };
-    let isProductInCart = cart.products.some(
+    let isProductInCart = box.fans.some(
       (item) => item.item.id == newProduct.item.id
     );
     if (isProductInCart) {
-      cart.products = cart.products.filter(
-        (item) => item.item.id != newProduct.item.id
-      );
+      box.fans = box.fans.filter((item) => item.item.id != newProduct.item.id);
     } else {
-      cart.products.push(newProduct);
+      box.fans.push(newProduct);
     }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("box", JSON.stringify(box));
   }
 
-  function checkItemInFollow(id) {
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    if (!cart) {
-      cart = { products: [] };
+  function checkFans(id) {
+    let box = JSON.parse(localStorage.getItem("box"));
+    if (!box) {
+      box = { fans: [] };
     }
-    let isProductInCart = cart.products.some((item) => item.item.id == id);
-    return isProductInCart;
+    let isProductInFan = box.fans.some((item) => item.item.id == id);
+    return isProductInFan;
   }
-  function deleteFromFollow(id) {
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    if (!cart) {
-      cart = { products: [], totalPrice: 0 };
+
+  function deleteFans(id) {
+    let box = JSON.parse(localStorage.getItem("box"));
+    if (!box) {
+      box = { fans: [] };
     }
-    cart.products = cart.products.filter((item) => item.item.id != id);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    getFollow();
+    box.fans = box.fans.filter((item) => item.item.id != id);
+    localStorage.setItem("box", JSON.stringify(box));
+    getCart1();
   }
 
   return (
-    <followContext.Provider
+    <fanContext.Provider
       value={{
-        followLength: state.followLength,
-        follow: state.follow,
-        getFollow,
-        addProductToFollow,
-        checkItemInFollow,
-        deleteFromFollow,
+        fan: state.fan,
+        cartFan: state.cartFan,
+        getCart1,
+        addFans,
+        checkFans,
+        deleteFans,
       }}
     >
       {children}
-    </followContext.Provider>
+    </fanContext.Provider>
   );
 };
-export default FollowContextProvider;
+export default FanContextProvider;

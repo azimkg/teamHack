@@ -4,19 +4,22 @@ import Routing from "./Routing";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import "./App.css";
 import CartContextProvider from "./context/cartCorntext";
-import FollowContextProvider from "./context/followContext";
 import AuthContextProvider from "./context/authContext";
+import CommitContextProvider from "./context/contextCommit";
+import FanContextProvider from "./context/followContext";
 
 const App = () => {
   return (
     <AuthContextProvider>
-      <ContextPhoneProvider>
-        <FollowContextProvider>
-          <CartContextProvider>
-            <Routing />
-          </CartContextProvider>
-        </FollowContextProvider>
-      </ContextPhoneProvider>
+      <CartContextProvider>
+        <ContextPhoneProvider>
+          <CommitContextProvider>
+            <FanContextProvider>
+              <Routing />
+            </FanContextProvider>
+          </CommitContextProvider>
+        </ContextPhoneProvider>
+      </CartContextProvider>
     </AuthContextProvider>
   );
 };

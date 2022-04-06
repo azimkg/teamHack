@@ -19,7 +19,9 @@ import Success from "./components/Pages/Success";
 import Phone from "./components/Phone/Phone";
 import PhoneList from "./components/PhoneList/PhoneList";
 import { authContext } from "./context/authContext";
-import Tv from ".././src/components/PhoneList/Tv/Tv"
+import Tv from ".././src/components/PhoneList/Tv/Tv";
+import Form from "./components/Form/Forms";
+import Commit from "./components/Commit/Commit";
 
 const Routing = () => {
   let ADMIN_ROUTES = [
@@ -34,7 +36,7 @@ const Routing = () => {
       id: 2,
     },
   ];
-  const { currentUser } = useContext(authContext)
+  const { currentUser } = useContext(authContext);
   return (
     <BrowserRouter>
       <Header />
@@ -48,13 +50,25 @@ const Routing = () => {
         <Route path="/for" element={<InHome />} />
         <Route path="/auth" element={<Auth />} />
         {ADMIN_ROUTES.map((item) => (
-          <Route key={item.id} path={item.link} element={currentUser === ADMIN_EMAIL ? item.element : <Navigate replace to="*" />} />
+          <Route
+            key={item.id}
+            path={item.link}
+            element={
+              currentUser === ADMIN_EMAIL ? (
+                item.element
+              ) : (
+                <Navigate replace to="*" />
+              )
+            }
+          />
         ))}
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<CartPhone />} />
         <Route path="/buy" element={<Buy />} />
         <Route path="/tv" element={<Tv />} />
         <Route path="/success" element={<Success />} />
+        <Route path="/form" element={<Form />} />
+        <Route path="/commit" element={<Commit />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />

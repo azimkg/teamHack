@@ -66,3 +66,8 @@
     font-weight: 500;
   }
 }
+@media (max-width: 550px) {
+  .footers {
+    height: 80px;
+  }
+}

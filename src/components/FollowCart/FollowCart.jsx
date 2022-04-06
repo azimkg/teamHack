@@ -1,20 +1,20 @@
 import React, { useContext, useEffect } from "react";
-import { followContext } from "../../context/followContext";
+import { fanContext } from "../../context/followContext";
 import { List, Button } from "antd";
 
 const FollowCart = () => {
-  const { follow, getFollow, deleteFromFollow } = useContext(followContext);
+  const { fan, getCart1, deleteFans } = useContext(fanContext);
   useEffect(() => {
-    getFollow();
+    getCart1();
   }, []);
 
-  console.log(follow);
+  console.log(fan);
   return (
     <div style={{ margin: "50px auto" }}>
       <div className="containers">
         <List
           itemLayout="vertical"
-          dataSource={follow.products}
+          dataSource={fan.fans}
           renderItem={(item) => (
             <List.Item extra={<img src={item.item.image} width="300px" />}>
               <List.Item.Meta
@@ -27,7 +27,7 @@ const FollowCart = () => {
                         style={{ marginTop: "10px" }}
                         danger
                         type="text"
-                        onClick={() => deleteFromFollow(item.item.id)}
+                        onClick={() => deleteFans(item.item.id)}
                       >
                         Удалить
                       </Button>

@@ -79,7 +79,7 @@ const CartPhone = () => {
                       >
                         Удалить
                       </Button>
-                      <Link to="/buy">
+                      <Link to="/form">
                         <Button type="dashed">Купить</Button>
                       </Link>
                     </div>

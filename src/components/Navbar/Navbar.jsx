@@ -21,10 +21,15 @@ const Navbar = () => {
       link: "/for",
       id: 3,
     },
+    {
+      title: "Отзывы",
+      link: "/commit",
+      id: 4,
+    },
   ];
 
   const location = useLocation();
-  const { currentUser } = useContext(authContext)
+  const { currentUser } = useContext(authContext);
   return (
     <div className="navbar">
       {NAV_BAR.map((item) => (
@@ -40,14 +45,18 @@ const Navbar = () => {
           {item.title}
         </Link>
       ))}
-      {currentUser === ADMIN_EMAIL ? <Link
-        to="/admin"
-        className={
-          location.pathname === "/admin" ? "navbar-item-active" : "navbar-item"
-        }
-      >
-        Админ
-      </Link> : null}
+      {currentUser === ADMIN_EMAIL ? (
+        <Link
+          to="/admin"
+          className={
+            location.pathname === "/admin"
+              ? "navbar-item-active"
+              : "navbar-item"
+          }
+        >
+          Админ
+        </Link>
+      ) : null}
     </div>
   );
 };
