@@ -27,6 +27,8 @@ const ContactInput = () => {
       image,
       desc,
       price,
+      comments: [],
+      likes: [],
     };
     addPhone(newPhone);
     navigate("/admin");

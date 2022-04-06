@@ -60,10 +60,18 @@
   .titles {
     font-size: 18px;
   }
+  .qled-image {
+    max-width: 100%;
+    height: 300px;
+  }
 }
 @media (max-width: 500px) {
   .qled-title {
     font-size: 10px;
+  }
+  .qled-image {
+    max-width: 100%;
+    height: 280px;
   }
 }
 @media (max-width: 400px) {

@@ -17,9 +17,9 @@ const Phone = () => {
   const [page, setPage] = useState(
     searchParams.get("_page") ? searchParams.get("_page") : 1
   );
-  const [limit, setLimit] = useState(4);
+  const [limit, setLimit] = useState(8);
   const [brand, setBrand] = useState([]);
-  const [price, setPrice] = useState([1, 5000]);
+  const [price, setPrice] = useState([1, 4000]);
   const [show, setShow] = useState(false);
   useEffect(() => {
     getAllPhones();

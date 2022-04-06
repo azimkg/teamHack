@@ -30,6 +30,26 @@
   margin: 100px 20px 100px 0px;
 }
 
+.commit-details {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+}
+.commit-div {
+  width: 100%;
+  max-width: 50%;
+}
+.div-scroll {
+  width: 100%;
+  max-width: 100%;
+}
+.div_details {
+  width: 100%;
+  max-width: 50%;
+}
 @media (max-width: 1200px) {
   .detka {
     justify-content: center;
@@ -41,6 +61,9 @@
   }
 }
 @media (max-width: 700px) {
+  .commit-div {
+    max-width: 70%;
+  }
   .imag {
     width: 600px;
     margin: 0px;
@@ -51,6 +74,9 @@
   }
   .example {
     margin: 10px 0;
+  }
+  .div_details {
+    max-width: 70%;
   }
 }
 @media (max-width: 480px) {
@@ -64,5 +90,8 @@
   .example {
     margin: 0;
     padding-bottom: 0;
+  }
+  .div_details {
+    max-width: 80%;
   }
 }

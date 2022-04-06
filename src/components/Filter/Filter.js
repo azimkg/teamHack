@@ -26,7 +26,7 @@ const Filter = ({ brand, setBrand, price, setPrice }) => {
         defaultValue={[1, 10000]}
         min={0}
         max={4000}
-        step={100}
+        step={10}
         range
       />
     </div>

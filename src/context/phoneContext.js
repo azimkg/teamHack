@@ -19,6 +19,7 @@ const reducer = (state = INIT_STATE, action) => {
         countPhone: action.payload.headers["x-total-count"],
       };
     case CASE_EDIT_PHONE:
+      console.log(action);
       return { ...state, editPhone: action.payload.data };
     default:
       return state;
@@ -58,6 +59,16 @@ const ContextPhoneProvider = ({ children }) => {
     getAllPhones();
   }
 
+  async function editOneCommit(id, comments) {
+    await axios.patch(`${PHONE_API}/${id}`, { comments: comments });
+    editsPhone(id);
+  }
+
+  async function editOneLike(id, likes) {
+    await axios.patch(`${PHONE_API}/${id}`, { likes: likes });
+    getAllPhones();
+  }
+
   return (
     <phoneContext.Provider
       value={{
@@ -69,6 +80,8 @@ const ContextPhoneProvider = ({ children }) => {
         deleteOnePhone,
         editOnePhone,
         editsPhone,
+        editOneCommit,
+        editOneLike,
       }}
     >
       {children}

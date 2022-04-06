@@ -5,20 +5,18 @@ import { authContext } from "../../context/authContext";
 import { HeartOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Badge } from "antd";
 import { cartContext } from "../../context/cartCorntext";
-import { followContext } from "../../context/followContext";
+import { fanContext, followContext } from "../../context/followContext";
 import Contacts from "../helpers/Contacts";
 import Menu from "../Menu/Menu";
 import Navbar from "../Navbar/Navbar";
 import "./Header.css";
 
 const Header = () => {
-
-  const { currentUser, handleLogout } = useContext(authContext)
-  const navigate = useNavigate()
+  const { currentUser, handleLogout } = useContext(authContext);
+  const navigate = useNavigate();
 
   const { cartLength } = useContext(cartContext);
-  const { followLength } = useContext(followContext);
-
+  const { cartFan } = useContext(fanContext);
 
   return (
     <>
@@ -51,7 +49,7 @@ const Header = () => {
             </Link>
           </div>
           <Link to="/like">
-            <Badge count={+followLength}>
+            <Badge count={+cartFan}>
               <HeartOutlined className="heart" />
             </Badge>
           </Link>
@@ -60,11 +58,22 @@ const Header = () => {
               <ShoppingCartOutlined className="shopping" />
             </Badge>
           </Link>
-          <div className="out" >
-            {currentUser ? <div className="email"> <span>{currentUser}</span><Button className="alsu" onClick={handleLogout}>Выйти</Button></div> : <Button className="Azim" onClick={() => navigate("/auth")}>Войти</Button>}
+          <div className="out">
+            {currentUser ? (
+              <div className="email">
+                {" "}
+                <span>{currentUser}</span>
+                <Button className="alsu" onClick={handleLogout}>
+                  Выйти
+                </Button>
+              </div>
+            ) : (
+              <Button className="Azim" onClick={() => navigate("/auth")}>
+                Войти
+              </Button>
+            )}
           </div>
         </div>
-
       </div>
     </>
   );

@@ -44,6 +44,13 @@
 .emails {
   display: none;
 }
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 200px auto;
+}
 @media (max-width: 1150px) {
   .menu {
     display: block;
@@ -57,6 +64,9 @@
   }
   .emails {
     display: block;
+  }
+  .auth {
+    margin: 40px auto;
   }
 }
 @media (max-width: 350px) {
