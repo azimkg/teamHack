@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { commitContext } from "../../context/contextCommit";
 import { List, message, Avatar, Skeleton, Divider, Button } from "antd";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { phoneContext } from "../../context/phoneContext";
 import { authContext } from "../../context/authContext";
 import { useParams } from "react-router-dom";
+import { ADMIN_EMAIL } from "../helpers/consts";
 
 const DetailsCommit = () => {
   const { editPhone, editOneCommit } = useContext(phoneContext);
@@ -73,7 +73,7 @@ const DetailsCommit = () => {
               />
               <div className="form-button">
                 <div>Комментарий</div>
-                {currentUser ? (
+                {currentUser === ADMIN_EMAIL ? (
                   <Button type="link" onClick={() => deleteCommit(item.id)}>
                     Удалить
                   </Button>
@@ -83,7 +83,7 @@ const DetailsCommit = () => {
                     onClick={() =>
                       setTimeout(() => {
                         message.warning(
-                          "Чтобы удалить комментарий, вам надо зарегистрироваться!"
+                          "Только администратор сайта может удалить ваш комментарий!"
                         );
                       }, 500)
                     }
