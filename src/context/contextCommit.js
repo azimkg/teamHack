@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import axios from "axios";
 
-const API_COMMIT = "http://localhost:8001/commit";
+const API_COMMIT = "https://samsungdeploy.herokuapp.com/commit";
 
 export const commitContext = React.createContext();
 
