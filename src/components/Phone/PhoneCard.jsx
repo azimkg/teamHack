@@ -22,10 +22,6 @@ const PhoneCard = ({ item }) => {
   const { editOneLike, editPhone, editsPhone, getAllPhones } =
     useContext(phoneContext);
 
-  useEffect(() => {
-    getAllPhones();
-  }, []);
-
   function saveLikes() {
     let like = {
       user: currentUser,
