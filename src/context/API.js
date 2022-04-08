@@ -1,1 +1,1 @@
-export const PHONE_API = "http://localhost:8001/phones";
+export const PHONE_API = "https://samsungdeploy.herokuapp.com/phones";
